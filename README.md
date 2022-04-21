@@ -1,0 +1,26 @@
+ fun main(){
+   print("input as '1' or '0',split(,) :" )
+     val arr= readLine()!!.split(",").map { it.toInt() }
+     bitStuffing(arr )
+ }
+
+ fun bitStuffing(arr:List<Int>){
+     val n=arr.size
+     val brr= mutableListOf<Int>()
+     var i=0
+     var count=0
+     var k=0
+     for (j in 0 until (n)) {
+         if (arr[j]==1){
+             count++
+            brr.add(arr[j])
+             if (count==(n-1) && arr[j+1]==1){
+                 i=j+1
+                 brr.add( 0)
+             }
+         }else{
+             brr.add(arr[j])
+         }
+         }
+     println(brr)
+ }
